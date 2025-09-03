@@ -18,7 +18,6 @@ class Clock extends StatelessWidget {
 
 
     gears.ggg();
-    print(trimm(int.parse(gears.year.toString())));
     return Container(
       color: pallet.background,
       width: MediaQuery.of(context).size.width,
@@ -31,8 +30,8 @@ class Clock extends StatelessWidget {
           // the first
           Container(
             decoration: con,
-            width: MediaQuery.of(context).size.width * 0.7,
-            height: MediaQuery.of(context).size.width * 0.7,
+            width: MediaQuery.of(context).size.width * 0.8,
+            height: MediaQuery.of(context).size.width * 0.8,
             child: Stack(
               children: [
                 SizedBox(
@@ -103,8 +102,8 @@ class Clock extends StatelessWidget {
           //the second
           Container(
             decoration: con,
-            width: MediaQuery.of(context).size.width * 0.7,
-            height: MediaQuery.of(context).size.width * 0.7,
+            width: MediaQuery.of(context).size.width * 0.8,
+            height: MediaQuery.of(context).size.width * 0.8,
             child: Stack(
               children: [
                 Column(
