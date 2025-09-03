@@ -27,5 +27,5 @@ jobs:
       - name: Upload Android APK
         uses: actions/upload-artifact@v4
         with:
-          name: MineSweeper-android-apk
+          name: android-build-apk
           path: build/app/outputs/flutter-apk/app-release.apk
