@@ -12,7 +12,7 @@ class Clock extends StatelessWidget {
     final pallet = context.watch<Thime>();
 
     BoxDecoration con = BoxDecoration(
-      borderRadius: BorderRadius.all(Radius.circular(30)),
+      borderRadius: BorderRadius.all(Radius.circular(45)),
       color: pallet.box,
     );
 
@@ -30,8 +30,8 @@ class Clock extends StatelessWidget {
           // the first
           Container(
             decoration: con,
-            width: MediaQuery.of(context).size.width * 0.8,
-            height: MediaQuery.of(context).size.width * 0.8,
+            width: MediaQuery.of(context).size.width * 0.87,
+            height: MediaQuery.of(context).size.width * 0.87,
             child: Stack(
               children: [
                 SizedBox(
@@ -52,13 +52,13 @@ class Clock extends StatelessWidget {
                   children: [
                     SizedBox(width: MediaQuery.of(context).size.width),
                     Transform.translate(
-                      offset: Offset(0, 2.5),
+                      offset: Offset(0, 7),
                       child: FittedBox(
                         fit: BoxFit.contain,
                         child: Text(
                           trimm(gears.hour % 12),
                           style: TextStyle(
-                            fontSize: 200, height: 1 , color: pallet.txt,fontWeight:FontWeight.bold,
+                            fontSize: 250, height: 1 , color: pallet.txt,fontWeight:FontWeight.bold,
                           ), // keep it big; FittedBox will scale
                         ),
                       ),
@@ -67,17 +67,14 @@ class Clock extends StatelessWidget {
                 ),
 
                 Positioned(
-                  left: 0,
-                  bottom: 0,
-                  child: Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Text(
-                      gears.hour > 12 ? "PM" : "AM",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: pallet.txt,
-                        fontWeight: FontWeight.bold,
-                      ),
+                  left: 15,
+                  bottom: 15,
+                  child: Text(
+                    gears.hour > 12 ? "PM" : "AM",
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: pallet.txt,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -102,8 +99,8 @@ class Clock extends StatelessWidget {
           //the second
           Container(
             decoration: con,
-            width: MediaQuery.of(context).size.width * 0.8,
-            height: MediaQuery.of(context).size.width * 0.8,
+            width: MediaQuery.of(context).size.width * 0.87,
+            height: MediaQuery.of(context).size.width * 0.87,
             child: Stack(
               children: [
                 Column(
@@ -111,13 +108,13 @@ class Clock extends StatelessWidget {
                   children: [
                     SizedBox(width: MediaQuery.of(context).size.width),
                     Transform.translate(
-                      offset: Offset(0, 2.5),
+                      offset: Offset(0, 7),
                       child: FittedBox(
                         fit: BoxFit.contain,
                         child: Text(
                           trimm(gears.minute),
                           style: TextStyle(
-                            fontSize: 200, height: 1, color: pallet.txt, fontWeight:FontWeight.bold,
+                            fontSize: 250, height: 1, color: pallet.txt, fontWeight:FontWeight.bold,
                           ), // keep it big; FittedBox will scale
                         ),
                       ),
@@ -126,8 +123,8 @@ class Clock extends StatelessWidget {
                 ),
 
                 Positioned(
-                  right: 10,
-                  bottom: 10,
+                  right: 15,
+                  bottom: 15,
                   child: Text(
                     trimm(gears.second),
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: pallet.txt),
