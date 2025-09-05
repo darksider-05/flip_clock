@@ -55,11 +55,15 @@ class Clock extends StatelessWidget {
                       offset: Offset(0, 7),
                       child: FittedBox(
                         fit: BoxFit.contain,
-                        child: Text(
-                          trimm(gears.hour % 12),
-                          style: TextStyle(
-                            fontSize: 250, height: 1 , color: pallet.txt,fontWeight:FontWeight.bold,
-                          ), // keep it big; FittedBox will scale
+                        child: AnimatedSwitcher(
+                          duration: Duration(milliseconds: 500),
+                          child: Text(
+                            trimm(gears.hour % 12),
+                            key: ValueKey(gears.hour),
+                            style: TextStyle(
+                              fontSize: 250, height: 1 , color: pallet.txt,fontWeight:FontWeight.bold,
+                            ), // keep it big; FittedBox will scale
+                          ),
                         ),
                       ),
                     ),
@@ -111,11 +115,15 @@ class Clock extends StatelessWidget {
                       offset: Offset(0, 7),
                       child: FittedBox(
                         fit: BoxFit.contain,
-                        child: Text(
-                          trimm(gears.minute),
-                          style: TextStyle(
-                            fontSize: 250, height: 1, color: pallet.txt, fontWeight:FontWeight.bold,
-                          ), // keep it big; FittedBox will scale
+                        child: AnimatedSwitcher(
+                          duration: Duration(milliseconds: 500),
+                          child: Text(
+                            trimm(gears.minute),
+                            key: ValueKey(gears.minute),
+                            style: TextStyle(
+                              fontSize: 250, height: 1, color: pallet.txt, fontWeight:FontWeight.bold,
+                            ), // keep it big; FittedBox will scale
+                          ),
                         ),
                       ),
                     ),
