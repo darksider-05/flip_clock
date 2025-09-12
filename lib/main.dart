@@ -3,11 +3,8 @@ import 'package:flip_clock/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'body.dart';
-import 'package:flutter/services.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,DeviceOrientation.portraitDown]).then((_){
     runApp(
       MultiProvider(
         providers: [
@@ -17,8 +14,7 @@ void main() {
         child: MyApp(),
       ),
     );
-  });
-}
+  }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
