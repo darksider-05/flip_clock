@@ -14,15 +14,15 @@ class Clock extends StatelessWidget {
     final pallet = context.watch<Thime>();
 
     gears.ggg();
-    var width =  MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
+    var width =  MediaQuery.of(context).size.shortestSide;
+    var height = MediaQuery.of(context).size.longestSide;
     bool isver = MediaQuery.of(context).orientation == Orientation.portrait;
 
 
     return Container(
       color: pallet.background,
-      width: width,
-      height: height,
+      width:isver ? width: height,
+      height:isver ? height: width,
       child: isver? Port() :  Land()
     );
   }

@@ -19,8 +19,8 @@ class Land extends StatelessWidget {
       color: pallet.box,
     );
 
-    var width =  MediaQuery.of(context).size.height;
-    var height = MediaQuery.of(context).size.width;
+    var width =  MediaQuery.of(context).size.shortestSide;
+    var height = MediaQuery.of(context).size.longestSide;
 
 
 
@@ -100,7 +100,7 @@ class Land extends StatelessWidget {
         ),
 
         // spacer
-        SizedBox(width: width),
+        SizedBox(height: width),
 
         //the second
         Container(
