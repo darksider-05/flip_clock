@@ -9,8 +9,6 @@ class Land extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     final gears = context.watch<Gears>();
     final pallet = context.watch<Thime>();
 
@@ -19,10 +17,8 @@ class Land extends StatelessWidget {
       color: pallet.box,
     );
 
-    var width =  MediaQuery.of(context).size.shortestSide;
+    var width = MediaQuery.of(context).size.shortestSide;
     var height = MediaQuery.of(context).size.longestSide;
-
-
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -32,8 +28,8 @@ class Land extends StatelessWidget {
         // the first
         Container(
           decoration: con,
-          width: width * 0.87,
-          height: width * 0.87,
+          width: height * 0.45,
+          height: height * 0.45,
           child: Stack(
             children: [
               SizedBox(
@@ -42,8 +38,13 @@ class Land extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "${trimm(gears.month)} / ${trimm(gears.day)} / ${gears.year.toString().length > 2 ?(int.parse(gears.year.toString().substring(2))):""}",
-                      style: TextStyle(fontSize: 18, color: pallet.txt, fontWeight: FontWeight.bold, wordSpacing: -2),
+                      "${trimm(gears.month)} / ${trimm(gears.day)} / ${gears.year.toString().length > 2 ? (int.parse(gears.year.toString().substring(2))) : ""}",
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: pallet.txt,
+                        fontWeight: FontWeight.bold,
+                        wordSpacing: -2,
+                      ),
                     ),
                   ],
                 ),
@@ -63,7 +64,10 @@ class Land extends StatelessWidget {
                           trimm(gears.hour % 12),
                           key: ValueKey(gears.hour),
                           style: TextStyle(
-                            fontSize: 250, height: 1 , color: pallet.txt,fontWeight:FontWeight.bold,
+                            fontSize: 250,
+                            height: 1,
+                            color: pallet.txt,
+                            fontWeight: FontWeight.bold,
                           ), // keep it big; FittedBox will scale
                         ),
                       ),
@@ -88,11 +92,7 @@ class Land extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    width: width,
-                    height: 3,
-                    color: pallet.background,
-                  ),
+                  Container(width: width, height: 3, color: pallet.background),
                 ],
               ),
             ],
@@ -105,8 +105,8 @@ class Land extends StatelessWidget {
         //the second
         Container(
           decoration: con,
-          width: width * 0.87,
-          height: width * 0.87,
+          width: height * 0.45,
+          height: height * 0.45,
           child: Stack(
             children: [
               Column(
@@ -123,7 +123,10 @@ class Land extends StatelessWidget {
                           trimm(gears.minute),
                           key: ValueKey(gears.minute),
                           style: TextStyle(
-                            fontSize: 250, height: 1, color: pallet.txt, fontWeight:FontWeight.bold,
+                            fontSize: 250,
+                            height: 1,
+                            color: pallet.txt,
+                            fontWeight: FontWeight.bold,
                           ), // keep it big; FittedBox will scale
                         ),
                       ),
@@ -137,18 +140,18 @@ class Land extends StatelessWidget {
                 bottom: 15,
                 child: Text(
                   trimm(gears.second),
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,color: pallet.txt),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: pallet.txt,
+                  ),
                 ),
               ),
 
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    width: width,
-                    height: 3,
-                    color: pallet.background,
-                  ),
+                  Container(width: width, height: 3, color: pallet.background),
                 ],
               ),
             ],
@@ -158,7 +161,6 @@ class Land extends StatelessWidget {
     );
   }
 }
-
 
 String trimm(int inp) {
   var inpS = inp.toString();
